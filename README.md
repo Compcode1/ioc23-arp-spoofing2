@@ -1,8 +1,8 @@
-README: ARP Spoofing Case Study (IOC 23)
+**README: ARP Spoofing Case Study (IOC 23)**
 
-Project Title: ARP Spoofing via Wi-Fi Breach (Man-in-the-Middle Attack)
+**Project Title: ARP Spoofing via Wi-Fi Breach (Man-in-the-Middle Attack)**
 
-Objective:
+**Objective:**
 
 Simulate and analyze an ARP spoofing attack originating from a Wi-Fi breach.
 
@@ -12,7 +12,7 @@ Triangulate evidence across Wireshark, NetFlow, and switch logs.
 
 Align the attack sequence and triage response with the Cybersecurity Battlefield model.
 
-Attacker Behavior:
+**Attacker Behavior:**
 
 Attacker joined internal network via compromised Wi-Fi.
 
@@ -22,7 +22,7 @@ Claimed default gateway IP, diverting local traffic through attacker's MAC.
 
 Operated at OSI Layer 2 to become a man-in-the-middle.
 
-Telemetry Observed:
+**Telemetry Observed:**
 
 Wireshark captured gratuitous ARP replies.
 
@@ -32,7 +32,7 @@ Frame analysis confirmed spoofed ARP structure.
 
 Switch logs revealed frequent ARP updates for gateway IP.
 
-Cybersecurity Battlefield Layer Mapping:
+**Cybersecurity Battlefield Layer Mapping:**
 
 Layer 6: Network Communication — Impact felt by host as routing issues or traffic loss.
 
@@ -40,7 +40,7 @@ Layer 2: Data Link — Primary manipulation layer (ARP cache poisoning).
 
 Layer 4: Credentials & Secrets — Potential pivot if attacker captures session credentials.
 
-Host OS Interaction:
+**Host OS Interaction:**
 
 Host unaware unless escalated (e.g., credentials stolen).
 
@@ -48,7 +48,7 @@ Possible Layer 6 to Layer 4 pivot: stolen session tokens.
 
 ARP spoofing creates indirect symptoms, not logged locally.
 
-OSI Layer Mapping:
+**OSI Layer Mapping:**
 
 Layer 2: ARP reply injection
 
@@ -56,7 +56,7 @@ Layer 3: IP packet misrouting
 
 Layer 7: Potential application-layer compromise (e.g., email, web sessions)
 
-Triage Methodology:
+**Triage Methodology:**
 
 Wireshark: Detect unsolicited ARP replies from unrecognized MACs.
 
@@ -66,7 +66,7 @@ NetFlow: Monitor for abnormal traffic paths and sudden rerouting.
 
 Firewall Logs: Detect duplicate MACs or unusual ARP broadcast volume.
 
-Tools Used:
+**Tools Used:**
 
 Wireshark
 
@@ -76,7 +76,7 @@ Switch CLI / Management Console
 
 NetFlow (simulated analysis)
 
-Defender Actions:
+**Defender Actions:**
 
 Detected spoofed ARP packets and MAC/IP mismatches.
 
@@ -88,7 +88,7 @@ Isolated spoofing device via MAC traceback.
 
 Added ARP watch and anomaly alerts to SIEM.
 
-Lessons Learned:
+**Lessons Learned:**
 
 ARP spoofing remains highly effective in flat networks.
 
@@ -98,7 +98,7 @@ Cross-layer understanding is essential to trace escalation paths.
 
 Packet capture is a vital tool for initial detection.
 
-Cybersecurity Battlefield Relevance:
+**Cybersecurity Battlefield Relevance:**
 
 This case study reinforces the need for network-layer defenses and cross-layer pivot awareness.
 
